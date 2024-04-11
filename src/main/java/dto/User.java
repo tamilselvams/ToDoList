@@ -2,13 +2,13 @@ package dto;
 
 public class User {
 
+	
 	private int userid;
 	private String username;
 	private String useremail;
 	private long usercontact;
 	private String userpassword;
-	private byte[] userimage;
-	
+    private byte[] userimage;
 	public User(int userid, String username, String useremail, long usercontact, String userpassword,
 			byte[] userimage) {
 		super();
@@ -20,9 +20,8 @@ public class User {
 		this.userimage = userimage;
 	}
 	public User() {
-		// TODO Auto-generated constructor stub
+
 	}
-	
 	public int getUserid() {
 		return userid;
 	}
@@ -44,7 +43,6 @@ public class User {
 	public long getUsercontact() {
 		return usercontact;
 	}
-	
 	public void setUsercontact(long usercontact) {
 		this.usercontact = usercontact;
 	}
@@ -61,8 +59,6 @@ public class User {
 		this.userimage = userimage;
 	}
 	
-	
 
 
-	
 }

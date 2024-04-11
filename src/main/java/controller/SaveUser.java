@@ -1,6 +1,8 @@
 package controller;
 
 import java.io.IOException;
+import java.sql.SQLException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
@@ -29,20 +31,19 @@ byte[] imagebytes = imagepart.getInputStream().readAllBytes();
  try {
 	 int res=dao.saveUser(user);
 	 if(res>0) {
-//		 resp.sendRedirect("login.jsp");
-		 resp.getWriter().println("success");
+	 resp.sendRedirect("login.jsp");
+//		 resp.getWriter().println("success");
 	 }
 	 else {
-//		 resp.sendRedirect("signup.jsp");
-		 resp.getWriter().println("Failed");
+		 resp.sendRedirect("signup.jsp");
+		 //	 resp.getWriter().println("Failed");
 }}
-	 catch(Exception e) {
-		 
+	 catch(ClassNotFoundException e) {
+		 e.printStackTrace();
 	 }
-		 
- 
- 
- 
- 
+ catch(SQLException e) {
+	 e.printStackTrace();
+
+ }
 }
 }
